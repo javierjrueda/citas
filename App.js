@@ -7,7 +7,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import Inicio from "./views/inicio";
-import AdministradorCitas from "./views/Citas";
+import AdministradorCitas from "./views/citas";
+import Layouts from "./views/layouts";
+
 
 const Stack = createStackNavigator();
 
@@ -26,6 +28,10 @@ const App = () => {
         <Stack.Screen
           name="Administrador de Citas"
           component={AdministradorCitas}
+        />
+        <Stack.Screen
+          name="Layouts"
+          component={Layouts}
         />
         
       </Stack.Navigator>

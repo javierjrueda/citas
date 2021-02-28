@@ -4,14 +4,14 @@ import { Text, StyleSheet, View, Button } from 'react-native';
 const Inicio = ({ navigation }) => {
     return( 
         <View style={styles.contenedor} >
-        <Text>Inicio</Text>
-        <Button
-            title="Nosotros"
-            onPress={ () => navigation.navigate('Nosotros') }
-        />
+        <Text style={styles.title}>Mis aplicaciones:</Text>
         <Button
             title="Administrador de citas"
             onPress={ () => navigation.navigate('Administrador de Citas') }
+        />
+        <Button
+            title="Layouts"
+            onPress={ () => navigation.navigate('Layouts') }
         />
         </View>
     );
@@ -24,6 +24,9 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: '#F2EFE9'
         
+    },
+    title: {
+        marginVertical: 8
     }
 })
 

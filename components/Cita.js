@@ -40,7 +40,6 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         paddingVertical: 10,
         paddingHorizontal: 10,
-        //marginHorizontal: '2.5%',
         marginBottom: '5%',
         borderRadius: 10
 
