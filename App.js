@@ -1,21 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
+import 'react-native-gesture-handler';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, StyleSheet, View, FlatList, TouchableHighlight, TouchableWithoutFeedback, Keyboard, Platform, Touchable} from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+// React navigation
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+import Inicio from "./views/inicio";
+import AdministradorCitas from "./views/Citas";
+
+const Stack = createStackNavigator();
+
+
+const App = () => {
+    return(
+      <>      
+      <NavigationContainer>
+        <Stack.Navigator
+          initialRouteName="Inicio"
+        >
+        <Stack.Screen
+          name="Inicio"
+          component={Inicio}
+        />
+        <Stack.Screen
+          name="Administrador de Citas"
+          component={AdministradorCitas}
+        />
+        
+      </Stack.Navigator>
+      </NavigationContainer>
+      </>
+    );
+};
+
+export default App;
