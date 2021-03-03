@@ -13,6 +13,10 @@ const Inicio = ({ navigation }) => {
             title="Layouts"
             onPress={ () => navigation.navigate('Layouts') }
         />
+        <Button
+            title="Criptomonedas"
+            onPress={ () => navigation.navigate('Criptomonedas') }
+        />
         </View>
     );
 }

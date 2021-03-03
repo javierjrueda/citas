@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Text, StyleSheet, View, FlatList, TouchableHighlight, TouchableWithoutFeedback, Keyboard, Platform, Touchable} from 'react-native';
-import Cita from '../components/Cita';
-import Formulario from '../components/Formulario';
+import Cita from '../components/Citas/Citas';
+import Formulario from '../components/Citas/Formulario';
 
 
 const AdministradorCitas = () => {

@@ -9,6 +9,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Inicio from "./views/inicio";
 import AdministradorCitas from "./views/citas";
 import Layouts from "./views/layouts";
+import Cripto from "./views/criptomonedas";
 
 
 const Stack = createStackNavigator();
@@ -32,6 +33,10 @@ const App = () => {
         <Stack.Screen
           name="Layouts"
           component={Layouts}
+        />
+        <Stack.Screen
+          name="Criptomonedas"
+          component={Cripto}
         />
         
       </Stack.Navigator>
