@@ -6,17 +6,20 @@ const Inicio = ({ navigation }) => {
         <View style={styles.contenedor} >
         <Text style={styles.title}>Mis aplicaciones:</Text>
         <Button
-            title="Administrador de citas"
-            onPress={ () => navigation.navigate('Administrador de Citas') }
-        />
-        <Button
-            title="Layouts"
-            onPress={ () => navigation.navigate('Layouts') }
-        />
-        <Button
-            title="Criptomonedas"
+            title="🚀 Criptomonedas"
             onPress={ () => navigation.navigate('Criptomonedas') }
         />
+        <Button
+            title="👨🏻‍🎨 Layouts"
+            onPress={ () => navigation.navigate('Layouts') }
+        />
+
+        <Button
+            title="💅🏼 Administrador de citas"
+            onPress={ () => navigation.navigate('Administrador de Citas') }
+        />
+
+
         </View>
     );
 }
