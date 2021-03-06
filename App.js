@@ -8,7 +8,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Inicio from "./views/inicio";
 import AdministradorCitas from "./views/citas";
 import Layouts from "./views/layouts";
-import Cripto from "./views/criptomonedas";
+import Cripto from "./views/criptomonedas"; 
 
 
 const Stack = createStackNavigator();

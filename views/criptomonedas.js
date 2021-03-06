@@ -1,11 +1,33 @@
-import React from 'react';
-import { Text, StyleSheet, View, Button, Image, ImageBackground} from 'react-native';
+import React, { useState, useEffect} from 'react';
+import { Text, StyleSheet, View, Button, Image, ImageBackground, ScrollView} from 'react-native';
 import { LinearGradient } from "expo-linear-gradient";
+import axios from 'axios';
+
 import Encabezado from '../components/Cripto/Header';
 import Formulario from '../components/Cripto/Formulario';
+import Cotizacion from '../components/Cripto/Cotizacion';
 
 
 const Cripto = () => {
+
+    const [moneda, setMoneda] = useState('');
+    const [criptomoneda, setCriptomoneda] = useState('');
+    const [consultarAPI, setConsultarAPI] = useState(false);
+    const [resultado, setResultado] = useState({});
+    
+    useEffect(() => {
+        const cotizarCriptomoneda = async () => {
+            if(consultarAPI){
+                //Consultar la API para obtener la cotización
+                const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomoneda}&tsyms=${moneda}`;
+                const resultado = await axios.get(url);
+                setResultado(resultado.data.DISPLAY[criptomoneda][moneda])
+                setConsultarAPI(false)
+            }
+        }
+        cotizarCriptomoneda();
+    }, [consultarAPI])
+
     return(
     <>
         
@@ -20,9 +42,20 @@ const Cripto = () => {
                 source={ require('../assets/img/Saly-2.png')}
                 style={styles.imgbackground}
             >
-                <Formulario style={styles.container}/>
-
+                <Formulario 
+                    style={styles.container}
+                    moneda={moneda}
+                    criptomoneda={criptomoneda}
+                    setMoneda={setMoneda}
+                    setCriptomoneda={setCriptomoneda}
+                    setConsultarAPI={setConsultarAPI}
+                />
+                <Cotizacion
+                resultado={resultado}
+                />
             </ImageBackground>
+
+
             </View>
             </LinearGradient>
         </View>
@@ -30,6 +63,7 @@ const Cripto = () => {
         
         
     </>
+
     );
 };
 

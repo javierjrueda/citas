@@ -6,6 +6,7 @@ import Formulario from '../components/Citas/Formulario';
 
 const AdministradorCitas = () => {
   const [mostrarForm, guardarMostrarForm] = useState('false'); 
+  console.log(mostrarForm);
 
   //definir el state de citas
   const [citas, setCitas] = useState([

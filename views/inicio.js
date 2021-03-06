@@ -25,7 +25,7 @@ const Inicio = ({ navigation }) => {
             <View style={styles.contenedor}>
                 <Text style={styles.title}>Mis aplicaciones:</Text>
                 <View style={styles.listado}>
-                <TouchableHighlight style={styles.card} onPress={ () => navigation.navigate('Criptomonedas') }>
+                <TouchableHighlight style={styles.card1} onPress={ () => navigation.navigate('Criptomonedas') }>
                     <>
                         <Image 
                             style= {styles.cover}
@@ -36,7 +36,7 @@ const Inicio = ({ navigation }) => {
                         </View>
                     </>
                 </TouchableHighlight>
-                <TouchableHighlight style={styles.card} onPress={ () => navigation.navigate('Layouts') }>
+                <TouchableHighlight style={styles.card2} onPress={ () => navigation.navigate('Layouts') }>
                     <>
                         <Image 
                             style= {styles.cover}
@@ -48,7 +48,7 @@ const Inicio = ({ navigation }) => {
                         </View>
                     </>
                 </TouchableHighlight>
-                <TouchableHighlight style={styles.card} onPress={ () => navigation.navigate('Administrador de Citas') }>
+                <TouchableHighlight style={styles.card3}  onPress={ () => navigation.navigate('Administrador de Citas') }>
                     <>
                         <Image 
                             style= {styles.cover}
@@ -59,14 +59,14 @@ const Inicio = ({ navigation }) => {
                         </View>
                     </>
                 </TouchableHighlight>
-                <TouchableHighlight style={styles.card}>
+                <TouchableHighlight style={styles.card4}>
                     <>
                         <Image 
                             style= {styles.cover}
                             source={ require('../assets/img/avo.jpg')}
                         />
                         <View style={styles.button}>
-                                <Text style={styles.texto}>New coming soon...</Text>
+                                <Text style={styles.texto}>More coming soon...</Text>
                         </View>
                     </>
                 </TouchableHighlight>
@@ -103,10 +103,31 @@ const styles = StyleSheet.create({
         flex: 1
 
     },
-    card: {
+    card1: {
         width: '48%',
         height: 200,
-        backgroundColor: '#9983EE',
+        backgroundColor: '#F99F8B',
+        borderRadius: 10,
+        marginVertical: '1.5%'
+    },
+    card2: {
+        width: '48%',
+        height: 200,
+        backgroundColor: '#CFE7D9',
+        borderRadius: 10,
+        marginVertical: '1.5%'
+    },
+    card3: {
+        width: '48%',
+        height: 200,
+        backgroundColor: '#E5EBEF',
+        borderRadius: 10,
+        marginVertical: '1.5%'
+    },
+    card4: {
+        width: '48%',
+        height: 200,
+        backgroundColor: '#BAC378',
         borderRadius: 10,
         marginVertical: '1.5%'
     },
