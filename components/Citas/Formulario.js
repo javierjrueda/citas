@@ -28,7 +28,7 @@ const Formulario = (citas, setCitas, guardarMostrarForm) => {
     const confirmarFecha = date => {
         const options = { year: 'numeric', month: 'long', day: "numeric" };
         guardarFecha(date.toLocaleDateString('es-ES', options));
-        hideDatePicker();
+        hideDatePicker(); 
     };
 
     //Muestra u oculta el Time picker
