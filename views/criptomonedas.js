@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from 'react';
-import { Text, StyleSheet, View, Button, Image, ImageBackground, ScrollView} from 'react-native';
+import { StyleSheet, View, ActivityIndicator, ImageBackground} from 'react-native';
 import { LinearGradient } from "expo-linear-gradient";
 import axios from 'axios';
 
@@ -14,6 +14,7 @@ const Cripto = () => {
     const [criptomoneda, setCriptomoneda] = useState('');
     const [consultarAPI, setConsultarAPI] = useState(false);
     const [resultado, setResultado] = useState({});
+    const [cargando, setcargando] = useState(false);
     
     useEffect(() => {
         const cotizarCriptomoneda = async () => {
@@ -21,15 +22,24 @@ const Cripto = () => {
                 //Consultar la API para obtener la cotización
                 const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomoneda}&tsyms=${moneda}`;
                 const resultado = await axios.get(url);
-                setResultado(resultado.data.DISPLAY[criptomoneda][moneda])
-                setConsultarAPI(false)
+                setcargando(true);
+
+                //Ocultar el spinner y mostrar el resultado
+                setTimeout(() => {
+                    setResultado(resultado.data.DISPLAY[criptomoneda][moneda]);
+                    setConsultarAPI(false);
+                    setcargando(false);
+                }, 1000);
             }
         }
         cotizarCriptomoneda();
     }, [consultarAPI])
 
+    //Mostrar el spinner o el resultado
+    const componente = cargando ? <ActivityIndicator size='large' style={styles.spinner} /> : <Cotizacion resultado={resultado}/>
+
+
     return(
-    <>
         
         <View style={styles.container}>
             <LinearGradient
@@ -50,9 +60,8 @@ const Cripto = () => {
                     setCriptomoneda={setCriptomoneda}
                     setConsultarAPI={setConsultarAPI}
                 />
-                <Cotizacion
-                resultado={resultado}
-                />
+                {componente}
+
             </ImageBackground>
 
 
@@ -61,8 +70,7 @@ const Cripto = () => {
         </View>
 
         
-        
-    </>
+
 
     );
 };
@@ -92,15 +100,16 @@ const styles = StyleSheet.create({
     imgbackground: {
         width: '100%',
         height: '90%',
-        alignSelf: 'flex-end',
         
     },
     container_margins: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center',
-        marginHorizontal:'2,5%'
+        marginHorizontal:'2,5%',
       },
+    spinner: {
+        marginVertical:20
+    }
 })
 
 export default Cripto;

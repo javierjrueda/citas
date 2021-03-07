@@ -31,7 +31,7 @@ const styles = StyleSheet.create ({
         backgroundColor: '#8579e1ff', 
         width: '90%',
         padding: 20, 
-        marginTop: 20,
+        marginTop: 35,
         alignSelf: 'center', 
         borderRadius: 10,
         shadowColor: "#000",
@@ -58,7 +58,9 @@ const styles = StyleSheet.create ({
 
     span: {
         fontFamily: 'FredokaOne-Regular',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        fontSize: 17,
+
 
     }
 });
