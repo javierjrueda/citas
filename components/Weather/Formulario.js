@@ -1,10 +1,29 @@
 import React, { useState} from "react";
-import { View, Text, TextInput, StyleSheet, TouchableWithoutFeedback, Animated } from "react-native";
+import { View, Text, TextInput, StyleSheet, TouchableWithoutFeedback, Animated, Alert} from "react-native";
 import { Picker } from "@react-native-picker/picker";
 
-const Form = () => {
+const Form = ({ busqueda, setbusqueda, setconsultar}) => {
+
+    const {pais, ciudad} = busqueda;
 
     const [animacionboton] = useState(new Animated.Value(1))
+
+    const consultarClima = () => {
+        if(pais.trim() === '' || ciudad.trim() === ''){
+            mostrarAlerta();
+            return;
+        }
+        //Consultar la API
+        setconsultar(true);
+    }
+
+    const mostrarAlerta = () => {
+        Alert.alert(
+            'Error',
+            'Agrega una ciudad y país para la búsqueda.',
+            [{ text: 'Entendido'}]
+        )
+    }
 
     const animacionEntrada = () => {
         Animated.spring( animacionboton, {
@@ -28,14 +47,18 @@ const Form = () => {
         <>
         <View style={styles.form}>
             <View>
-                <TextInput 
+                <TextInput
+                    value={ciudad}
+                    style={styles.input}
+                    onChangeText= { ciudad => setbusqueda({ ...busqueda, ciudad})}
                     placeholder="Ciudad"
                     placeholderTextColor='#666'
-                    style={styles.input}
                 />
             </View>
             <View>
                 <Picker
+                    selectedValue={pais}
+                    onValueChange= { pais => setbusqueda({ ...busqueda, pais})}
                     itemStyle={{height: 120, backgroundColor: '#fff'}}
                 >
                     <Picker.Item label="– Seleccione un país" value=''/>
@@ -49,6 +72,7 @@ const Form = () => {
             <TouchableWithoutFeedback
                 onPressIn={ () => animacionEntrada() }
                 onPressOut={ () => animacionSalida() }
+                onPress={ () => consultarClima() }
 
             >
                 <Animated.View style={[styles.btn, estiloAnimacion]}>
