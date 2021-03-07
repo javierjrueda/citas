@@ -9,6 +9,8 @@ import Inicio from "./views/inicio";
 import AdministradorCitas from "./views/citas";
 import Layouts from "./views/layouts";
 import Cripto from "./views/criptomonedas"; 
+import Weather from "./views/weather"; 
+
 
 
 const Stack = createStackNavigator();
@@ -30,12 +32,16 @@ const App = () => {
           component={AdministradorCitas}
         />
         <Stack.Screen
-          name="Layouts"
+          name="Organizador de viajes"
           component={Layouts}
         />
         <Stack.Screen
           name="Criptomonedas"
           component={Cripto}
+        />
+        <Stack.Screen
+          name="El Tiempo"
+          component={Weather}
         />
         
       </Stack.Navigator>

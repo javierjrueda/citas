@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, StyleSheet, View, Button, FlatList, Image, TouchableHighlight} from 'react-native';
+import { Text, StyleSheet, View, Image, TouchableWithoutFeedback} from 'react-native';
 import { LinearGradient } from "expo-linear-gradient";
 
 
@@ -17,16 +17,30 @@ const Inicio = ({ navigation }) => {
 
     return( 
         <LinearGradient
-                colors={['#432581','#99f0fb']}
+                colors={['rgba(62,161,219,1)','rgba(93,52,236,1)']}
                 style={styles.background}
-                start={[0,0]}
-                end={[1,1]}
+                start={[1,1]}
+                end={[0,0]}
+
+
+
         >
             <View style={styles.contenedor}>
                 <Text style={styles.title}>Mis aplicaciones:</Text>
                 <View style={styles.listado}>
-                <TouchableHighlight style={styles.card1} onPress={ () => navigation.navigate('Criptomonedas') }>
-                    <>
+                <TouchableWithoutFeedback onPress={ () => navigation.navigate('El Tiempo') }>
+                    <View style={styles.card5}>
+                        <Image 
+                            style= {styles.cover}
+                            source={ require('../assets/img/weather.jpg')}
+                        />
+                        <View style={styles.button}>
+                                <Text style={styles.texto}>El Tiempo</Text>
+                        </View>
+                    </View>
+                </TouchableWithoutFeedback>  
+                <TouchableWithoutFeedback onPress={ () => navigation.navigate('Criptomonedas') }>
+                    <View style={styles.card1}>
                         <Image 
                             style= {styles.cover}
                             source={ require('../assets/img/token.jpeg')}
@@ -34,22 +48,22 @@ const Inicio = ({ navigation }) => {
                         <View style={styles.button}>
                                 <Text style={styles.texto}>Criptomonedas</Text>
                         </View>
-                    </>
-                </TouchableHighlight>
-                <TouchableHighlight style={styles.card2} onPress={ () => navigation.navigate('Layouts') }>
-                    <>
+                    </View>
+                </TouchableWithoutFeedback>
+                <TouchableWithoutFeedback onPress={ () => navigation.navigate('Organizador de viajes') }>
+                    <View style={styles.card2}>
                         <Image 
                             style= {styles.cover}
                             source={ require('../assets/img/travel.jpg')}
                             //#CBE6DC
                         />
                         <View style={styles.button}>
-                                <Text style={styles.texto}>Layouts</Text>
+                                <Text style={styles.texto}>Organiza tu viaje</Text>
                         </View>
-                    </>
-                </TouchableHighlight>
-                <TouchableHighlight style={styles.card3}  onPress={ () => navigation.navigate('Administrador de Citas') }>
-                    <>
+                    </View>
+                </TouchableWithoutFeedback>
+                <TouchableWithoutFeedback  onPress={ () => navigation.navigate('Administrador de Citas') }>
+                    <View style={styles.card3}>
                         <Image 
                             style= {styles.cover}
                             source={ require('../assets/img/health.png')}
@@ -57,10 +71,10 @@ const Inicio = ({ navigation }) => {
                         <View style={styles.button}>
                                 <Text style={styles.texto}>Admin. de citas</Text>
                         </View>
-                    </>
-                </TouchableHighlight>
-                <TouchableHighlight style={styles.card4}>
-                    <>
+                    </View>
+                </TouchableWithoutFeedback>
+                <TouchableWithoutFeedback>
+                    <View style={styles.card4}>
                         <Image 
                             style= {styles.cover}
                             source={ require('../assets/img/avo.jpg')}
@@ -68,8 +82,8 @@ const Inicio = ({ navigation }) => {
                         <View style={styles.button}>
                                 <Text style={styles.texto}>More coming soon...</Text>
                         </View>
-                    </>
-                </TouchableHighlight>
+                    </View>
+                </TouchableWithoutFeedback>
 
 
                 </View>
@@ -88,11 +102,11 @@ const styles = StyleSheet.create({
         
     },
     title: {
-        fontFamily: 'FredokaOne-Regular',
         fontSize: 22, 
         marginVertical: 20,
         color: '#fff',
-        marginLeft: 20
+        marginLeft: 20,
+        fontWeight: 'bold'
     },
     background: {
         position: 'absolute',
@@ -131,6 +145,13 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         marginVertical: '1.5%'
     },
+    card5: {
+        width: '48%',
+        height: 200,
+        backgroundColor: '#2CBEFF',
+        borderRadius: 10,
+        marginVertical: '1.5%'
+    },
     cover: {
         width: '100%',
         height: '70%',
@@ -141,7 +162,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 10,
         fontSize: 15, 
         marginVertical: 5,
-        fontWeight: 'bold' ,
+        
     },
     icono: {
         alignSelf: 'flex-end',

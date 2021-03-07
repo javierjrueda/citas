@@ -13,7 +13,7 @@ const Layouts = ({ navigation }) => {
                 />
             </View>
             <View style={styles.contenedor}>
-                <Text style={styles.titulo}>Planes en París</Text>
+                <Text style={styles.titulo}>Encuentra planes cerca de ti</Text>
                 <ScrollView
                 horizontal
                 >
@@ -48,7 +48,7 @@ const Layouts = ({ navigation }) => {
                         />
                     </View> 
                 </ScrollView>
-                <Text style={styles.titulo}>Descubre las mayores ciudades</Text>
+                <Text style={styles.titulo}>Descubre tu próximo destino</Text>
                 <View>
                     <Image 
                         style= {styles.mejores}
@@ -68,7 +68,7 @@ const Layouts = ({ navigation }) => {
                     />
                 </View>  
             
-                <Text style={styles.titulo}>Nuestros alojamientos recomendados</Text>
+                <Text style={styles.titulo}>Alojamientos superhost</Text>
                 <View style={styles.listado}>
                     <View style={styles.listadoItem}>
                         <Image 
