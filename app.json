@@ -1,12 +1,14 @@
 {
-  "name": "citas",
-  "displayName": "citas",
+  "name": "React-apps",
+  "displayName": "React-apps",
   "expo": {
-    "name": "citas",
-    "slug": "citas",
+    "name": "React-apps",
+    "slug": "react-apps",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "description": "Conjunto de apps desarrolladas en React Native.",
+    "githubUrl": "https://github.com/javierjrueda/react-native-apps"
   }
 }

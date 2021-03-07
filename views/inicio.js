@@ -5,25 +5,12 @@ import { LinearGradient } from "expo-linear-gradient";
 
 const Inicio = ({ navigation }) => {
 
-    //definir el state de proyectos
-    const proyectos = [
-        { id: "1", nombre: "Administrador de citas", propietario: "actividad5"},
-        { id: "2", nombre: "Criptomonedas", propietario: "token"},
-        { id: "3", nombre: "Layouts", propietario: "mejores-1"},
-    ];
-
-
-
-
     return( 
         <LinearGradient
                 colors={['rgba(62,161,219,1)','rgba(93,52,236,1)']}
                 style={styles.background}
                 start={[1,1]}
                 end={[0,0]}
-
-
-
         >
             <View style={styles.contenedor}>
                 <Text style={styles.title}>Mis aplicaciones:</Text>
@@ -84,12 +71,8 @@ const Inicio = ({ navigation }) => {
                         </View>
                     </View>
                 </TouchableWithoutFeedback>
-
-
                 </View>
-
             </View>
-            
         </LinearGradient>
     );
 }
@@ -103,9 +86,9 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 22, 
-        marginVertical: 20,
+        marginTop: 20,
+        marginBottom: 20,
         color: '#fff',
-        marginLeft: 20,
         fontWeight: 'bold'
     },
     background: {
