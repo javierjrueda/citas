@@ -1,17 +1,24 @@
 import React from 'react';
-import { Text, StyleSheet, View, Image, TouchableWithoutFeedback} from 'react-native';
+import { Text, StyleSheet, View, Image, TouchableWithoutFeedback, ScrollView} from 'react-native';
+import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
 import { LinearGradient } from "expo-linear-gradient";
+import PCard from "../components/Global/projectcard";
+
 
 
 const Inicio = ({ navigation }) => {
 
+
+
     return( 
+        
         <LinearGradient
                 colors={['rgba(62,161,219,1)','rgba(93,52,236,1)']}
                 style={styles.background}
                 start={[1,1]}
                 end={[0,0]}
         >
+            <ScrollView>
             <View style={styles.contenedor}>
                 <Text style={styles.title}>Mis aplicaciones:</Text>
                 <View style={styles.listado}>
@@ -72,7 +79,14 @@ const Inicio = ({ navigation }) => {
                     </View>
                 </TouchableWithoutFeedback>
                 </View>
+
             </View>
+            {/* <PCard 
+                titulo='El tiempo'
+                imagen='Saly-1.png'
+            
+            /> */}
+            </ScrollView>
         </LinearGradient>
     );
 }
@@ -165,6 +179,13 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
         justifyContent: 'space-between',
     },
+    fullwidth: {
+        width: '48%',
+
+
+    },
+    button1: {
+    }
 })
 
 export default Inicio;

@@ -1,10 +1,8 @@
 import React from 'react';
-
-// React navigation
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-
-
+import { Provider as PaperProvider } from 'react-native-paper';
+import { name as appName } from './app.json';
 import Inicio from "./views/inicio";
 import AdministradorCitas from "./views/citas";
 import Layouts from "./views/layouts";
@@ -21,11 +19,12 @@ const Stack = createStackNavigator();
 const App = () => {
     return(
       <>
+      <PaperProvider>
       <NavigationContainer>
         <Stack.Navigator
           initialRouteName="Inicio"
           screenOptions={{
-            //headerShown: false,
+          //headerShown: false,
           }} 
         >
         <Stack.Screen
@@ -55,8 +54,11 @@ const App = () => {
         
       </Stack.Navigator>
       </NavigationContainer>
+      </PaperProvider>
       </>
     );
 };
+
+
 
 export default App;

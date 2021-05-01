@@ -5,7 +5,8 @@
     "ios": "react-native run-ios",
     "web": "expo start --web",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "link": "react-native link"
   },
   "dependencies": {
     "@react-native-community/datetimepicker": "^3.0.9",
@@ -26,12 +27,14 @@
     "react-native": "~0.63.4",
     "react-native-gesture-handler": "^1.8.0",
     "react-native-modal-datetime-picker": "^9.1.0",
+    "react-native-paper": "^4.7.2",
     "react-native-reanimated": "^1.13.2",
     "react-native-safe-area-context": "^3.1.9",
     "react-native-screens": "^2.15.2",
     "react-native-unimodules": "~0.12.0",
     "react-native-web": "~0.13.12",
-    "shortid": "^2.2.16"
+    "shortid": "^2.2.16",
+    "watchman": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "~7.9.0",

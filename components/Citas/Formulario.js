@@ -125,7 +125,7 @@ const Formulario = (citas, setCitas, guardarMostrarForm) => {
                     confirmTextIOS="Confirmar"
 
                 />
-                <Text>{fecha}</Text>
+                <Text style={styles.fecha}>{fecha}</Text>
             </View>
             <View>
                 <Text style={styles.label}>Hora:</Text>
@@ -198,6 +198,10 @@ const styles = StyleSheet.create({
         color: 'black',
         fontWeight: 'bold',
         textAlign: 'center',
+    },
+    fecha: {
+        fontSize: 20,
+        textAlign: 'center'
     }
 })
 

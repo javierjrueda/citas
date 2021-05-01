@@ -21,6 +21,7 @@ target 'citas' do
   #  post_install do |installer|
   #    flipper_post_install(installer)
   #  end
+
 end
 
 post_install do |installer|

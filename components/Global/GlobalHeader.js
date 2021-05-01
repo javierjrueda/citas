@@ -1,6 +1,5 @@
 import React from "react";
 import { Text, StyleSheet, Platform, View, TouchableHighlight } from "react-native";
-import { AntDesign } from '@expo/vector-icons'; 
 
 
 const Header = ({navigation}) => {

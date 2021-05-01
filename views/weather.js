@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { View, Text, StyleSheet, TouchableWithoutFeedback, Keyboard, Alert } from "react-native";
+
 import Form from "../components/Weather/Formulario";
 import Clima from "../components/Weather/Clima";
 
